@@ -5,8 +5,8 @@ import android.util.Log;
 import com.example.td.testmvp.data.TestApi;
 import com.example.td.testmvp.model.Book;
 import com.example.td.testmvp.model.RetrofitHelper;
-import com.example.td.testmvp.present.LoginPresent;
-import com.example.td.testmvp.view.LoginView;
+import com.example.td.testmvp.present.BookPresent;
+import com.example.td.testmvp.view.BookView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -16,10 +16,10 @@ import retrofit2.Response;
  * Created by td on 2018/3/6.
  */
 
-public class LoginPresentImpl implements LoginPresent{
-    private LoginView loginView;
-    public LoginPresentImpl(LoginView loginView) {
-        this.loginView = loginView;
+public class BookPresentImpl implements BookPresent {
+    private BookView bookView;
+    public BookPresentImpl(BookView bookView) {
+        this.bookView = bookView;
     }
     @Override
     public void login() {
@@ -52,15 +52,15 @@ public class LoginPresentImpl implements LoginPresent{
 
     @Override
     public void onDestroy() {
-        loginView = null;
+        bookView = null;
     }
 
     @Override
     public void onSuccess(Book book) {
-        loginView.loginData(book);
+        bookView.loginData(book);
     }
     @Override
     public void onError(String s) {
-        loginView.onError(s);
+        bookView.onError(s);
     }
 }

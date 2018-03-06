@@ -6,7 +6,7 @@ import com.example.td.testmvp.model.Book;
  * Created by td on 2018/3/6.
  */
 
-public interface LoginPresent {
+public interface BookPresent {
     void login();
     void onSuccess(Book s);
     void onError(String s);
